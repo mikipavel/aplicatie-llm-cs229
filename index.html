@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cum se construiește un LLM — CS229</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">🤖</div>
+      <div>
+        <h1>Cum se construiește un LLM</h1>
+        <p class="subtitle">Bazat pe lecția Stanford CS229 — „Building Large Language Models”</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+
+    <!-- ECRAN INTRO -->
+    <section id="screen-intro" class="screen active">
+      <div class="card intro-card">
+        <h2>Bine ai venit!</h2>
+        <p>
+          Această aplicație parcurge <strong>8 module</strong>, pe baza lecției Stanford CS229
+          „Machine Learning — Building Large Language Models” (susținută de Yann Dubois),
+          despre cum se construiește efectiv un model de limbaj mare, de la tokenizare și
+          pre-antrenare, până la alinierea prin RLHF/DPO și evaluarea modelelor de tip ChatGPT.
+        </p>
+        <ul class="intro-list">
+          <li>📚 Fiecare modul explică un concept-cheie din lecție, cu cifre și exemple reale</li>
+          <li>❓ După fiecare explicație, o întrebare rapidă îți verifică înțelegerea</li>
+          <li>🏁 La final primești scorul tău și cele 5 concluzii principale ale lecției</li>
+        </ul>
+        <p class="source-note">
+          Sursă: <a href="https://www.youtube.com/watch?v=9vM4p9NN0Ts" target="_blank" rel="noopener">
+          Stanford CS229 — Building Large Language Models (YouTube)</a>
+        </p>
+        <button id="btn-start" class="btn btn-primary">Începe</button>
+      </div>
+    </section>
+
+    <!-- ECRAN MODUL -->
+    <section id="screen-game" class="screen">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="progress-label">Modulul 1 din 8</span>
+          <span id="score-label">Scor: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="card module-card">
+        <div class="module-title">
+          <span id="module-icon" class="module-icon">🧩</span>
+          <h2 id="module-title-text">Titlu modul</h2>
+        </div>
+        <p id="module-explanation" class="module-explanation"></p>
+
+        <div class="highlight-box">
+          <span class="highlight-label">De reținut</span>
+          <p id="module-highlight" class="highlight-text"></p>
+        </div>
+
+        <div class="quiz-block">
+          <p class="quiz-question" id="quiz-question">Întrebare de verificare</p>
+          <div id="options-list" class="options-list"></div>
+        </div>
+      </div>
+
+      <!-- PANOU FEEDBACK -->
+      <div id="feedback-panel" class="card feedback-panel hidden">
+        <div class="feedback-head">
+          <span id="feedback-badge" class="feedback-badge"></span>
+        </div>
+        <p id="feedback-text" class="feedback-text"></p>
+        <button id="btn-next" class="btn btn-primary">Continuă</button>
+      </div>
+    </section>
+
+    <!-- ECRAN FINAL -->
+    <section id="screen-result" class="screen">
+      <div class="card result-card">
+        <div id="result-badge-icon" class="result-badge-icon">🏆</div>
+        <h2 id="result-level" class="result-level">Nivel</h2>
+        <p id="result-score" class="result-score">Scor: 0 / 80</p>
+        <p id="result-message" class="result-message"></p>
+
+        <div class="tips-recap">
+          <h3>Cele 5 concluzii cheie ale lecției</h3>
+          <ul id="tips-list" class="tips-list"></ul>
+        </div>
+
+        <button id="btn-restart" class="btn btn-primary">Reia aplicația</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>Conținut educațional bazat pe lecția Stanford CS229 (Yann Dubois) · uz intern</p>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
